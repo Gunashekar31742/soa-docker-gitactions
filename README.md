@@ -18,7 +18,7 @@ Copy-Item .env.example .env
 docker compose up --build
 ```
 
-Open the frontend at <http://localhost:5173>. The backend API is at <http://localhost:8086/bookstores>. PostgreSQL data is stored in the `postgres-data` Docker volume and survives container restarts.
+Open the frontend at <http://localhost:5173>. The Docker backend API is at <http://localhost:8087/bookstores> (host port 8087 maps to container port 8086). PostgreSQL data is stored in the `postgres-data` Docker volume and survives container restarts.
 
 To stop the containers while preserving database data:
 

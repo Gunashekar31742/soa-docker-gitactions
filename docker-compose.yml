@@ -24,7 +24,7 @@ services:
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-bookstore}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-bookstore-local}
     ports:
-      - "${BACKEND_PORT:-8086}:8086"
+      - "${BACKEND_PORT:-8087}:8086"
     depends_on:
       db:
         condition: service_healthy
@@ -34,7 +34,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        VITE_API_URL: ${VITE_API_URL:-http://localhost:8086/bookstores}
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8087/bookstores}
     ports:
       - "${FRONTEND_PORT:-5173}:80"
     depends_on:
